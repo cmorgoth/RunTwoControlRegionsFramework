@@ -1,0 +1,9 @@
+This Repository is intended to become a frameworks for the
+Caltech/Razor Run Two LHC effort to estimate different bakground
+contributions using various data control regions.
+
+This framework can plot relevant distribution in the different
+control regions as well as defining the scale factors (SF) 
+obtained from the different control regions.
+
+... 
