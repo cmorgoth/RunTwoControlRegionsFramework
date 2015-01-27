@@ -1,0 +1,8 @@
+#INPUTFILE XSEC KFACTOR 
+/mnt/hadoop/store/user/cmorgoth/RunTwo_8TeV_StudySamples/DYJetsHT/DYJetsHT200To400_RunTwo_TOTAL.root 19.73 1.1973
+/mnt/hadoop/store/user/cmorgoth/RunTwo_8TeV_StudySamples/DYJetsHT/DYJetsHT400_RunTwo_hadd_TOTAL.root 2.826 1.1973
+/mnt/hadoop/store/user/cmorgoth/RunTwo_8TeV_StudySamples/WJetsLNuHT/WJetsToLNu_150_HT_200_RunTwo_TOTAL.root 235.6 1.2401
+/mnt/hadoop/store/user/cmorgoth/RunTwo_8TeV_StudySamples/WJetsLNuHT/WJetsToLNu_200_HT_250_RunTwo_TOTAL.root 90.27 1.2401
+/mnt/hadoop/store/user/cmorgoth/RunTwo_8TeV_StudySamples/WJetsLNuHT/WJetsToLNu_250_HT_300_RunTwo_TOTAL.root 48.01 1.2401
+/mnt/hadoop/store/user/cmorgoth/RunTwo_8TeV_StudySamples/WJetsLNuHT/WJetsToLNu_300_HT_400_RunTwo_TOTAL.root 38.3 1.2401
+/mnt/hadoop/store/user/cmorgoth/RunTwo_8TeV_StudySamples/WJetsLNuHT/WJetsToLNu_400_HT_Inf_RunTwo_TOTAL.root 25.22 1.2401

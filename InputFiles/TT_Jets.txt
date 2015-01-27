@@ -1,0 +1,3 @@
+#/mnt/hadoop/store/user/djanders/RunTwo_8TeV_StudySamples/RazorControlSampleTTJetsFullLept.root
+#/mnt/hadoop/store/user/djanders/RunTwo_8TeV_StudySamples/RazorControlSampleTTJetsHadronic.root
+#/mnt/hadoop/store/user/djanders/RunTwo_8TeV_StudySamples/RazorControlSampleTTJetsSemiLept.root

@@ -1,0 +1,3 @@
+/wntmp/cmorgoth/RazorControlSampleTTJetsFullLept_Normalized.root
+/wntmp/cmorgoth/RazorControlSampleTTJetsHadronic_Normalized.root
+/wntmp/cmorgoth/RazorControlSampleTTJetsSemiLept_Normalized.root

@@ -1,0 +1,4 @@
+#InFile xsex kfactor
+/mnt/hadoop/store/user/djanders/RunTwo_8TeV_StudySamples/RazorControlSampleTTJetsFullLept.root 14.3115 1.8034 
+/mnt/hadoop/store/user/djanders/RunTwo_8TeV_StudySamples/RazorControlSampleTTJetsHadronic.root 62.2891 1.8034
+/mnt/hadoop/store/user/djanders/RunTwo_8TeV_StudySamples/RazorControlSampleTTJetsSemiLept.root 59.6994 1.8034

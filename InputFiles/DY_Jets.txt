@@ -1,0 +1,2 @@
+/mnt/hadoop/store/user/cmorgoth/RunTwo_8TeV_StudySamples/DYJetsHT/DYJetsHT200To400_RunTwo_TOTAL.root
+/mnt/hadoop/store/user/cmorgoth/RunTwo_8TeV_StudySamples/DYJetsHT/DYJetsHT400_RunTwo_hadd_TOTAL.root
