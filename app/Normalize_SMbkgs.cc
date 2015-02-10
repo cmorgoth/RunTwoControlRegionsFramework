@@ -50,7 +50,7 @@ int main(){
 	  //xsec in lumi have to have the same units
 	  xsec = xsec*1000.0;//Scaling to fb
 	  //NormalizeTree( tree, xsec, Lumi, kfactor, ngen, OutName );
-	  NormalizeTree( tree, 1.0, 1.0, 1.0, 1.0, OutName );
+	  NormalizeTree( tree, 1.0, 1.0, 1.0, 1.0, OutName );//Data
 	}//while loop
     }
   else

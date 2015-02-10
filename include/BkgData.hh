@@ -17,12 +17,19 @@
 
 //LOCAL INCLUDES
 #include "BoxStructure.hh"
-
+#include "ControlSampleEvents.hh"
 class BkgData
 {
 public:
+  //tree
+  ControlSampleEvents* CSE;
   //
-  BoxStructure* TwoMuon;
+  BoxStructure* MuMu;
+  BoxStructure* EleEle;
+  BoxStructure* MuEle;
+  
+  BoxStructure* Mu;
+  BoxStructure* Ele;
   
   //Constructor
   BkgData(){};
@@ -32,6 +39,7 @@ public:
   //Destructor
   ~BkgData();
   //Methods
+  bool Loop();
   
   
 private:

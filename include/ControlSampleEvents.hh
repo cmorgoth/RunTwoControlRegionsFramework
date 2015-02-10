@@ -5,9 +5,13 @@
 #include <cmath>
 #include "assert.h"
 #include <Rtypes.h>
+#include <fstream>
+#include <string>
+#include <iostream>
 //ROOT INCLUDES
 #include "TFile.h"
 #include "TTree.h"
+#include "TChain.h"
 #include "TError.h"
 #include "TLorentzVector.h"
 
@@ -97,11 +101,13 @@ public:
   UInt_t                  NBJetsTight;
   Float_t                 HT;
   Float_t                 lep1MT;
+  Float_t                 xs_w;
+  Float_t                 xs_w_kf;
   
   
 public:
   /// this is the main element
-  TTree *tree_;
+  TChain *tree_;
   TFile *f_;
   
   /// hold the names of variables to facilitate things (filled during Init)
@@ -186,10 +192,14 @@ public:
     NBJetsMedium         = 0.0;
     NBJetsTight          = 0.0;
     HT                   = 0.0;      
-    lep1MT               = 0.0;      
+    lep1MT               = 0.0;  
+    xs_w                 = 0.0;
+    xs_w_kf              = 0.0;
   }
   
   /// load a ControlSampleEvents
+  
+  /*
   void LoadTree(const char* file){
     f_ = TFile::Open(file);
     assert(f_);
@@ -197,10 +207,42 @@ public:
     InitTree();
     assert(tree_);
   }
+  */
+  
+  void LoadChain(const char* file){
+    tree_ = new TChain("ControlSampleEvent");
+    //chaining TFiles
+    std::ifstream chainFile ( file );
+    TString tfName;//TFileName
+    std::string tf_name;
+    if ( chainFile.is_open() )
+      {
+	while ( chainFile.good() )
+	  {
+	    chainFile >> tf_name;
+	    tfName = tf_name.c_str();
+	    if ( tf_name.find("#") != std::string::npos )
+	      {
+		std::cout << "[INFO]: Skipping File: " << tfName << std::endl;
+	      }
+	    else
+	      {
+		tree_->Add( tfName );
+		std::cout << "[INFO]: Adding File: " << tfName << std::endl; 
+	      }
+	  }
+      }
+    else{
+      std::cerr << "Unable to open file: "  << file << std::endl;
+    }
+    
+    InitTree();
+    assert(tree_);
+  }
   
   /// create a ControlSampleEvents
   void CreateTree(){
-    tree_ = new TTree("ControlSampleEvent","ControlSampleEvent");
+    //tree_ = new TTree("ControlSampleEvent","ControlSampleEvent");
     f_ = 0;
     
     //book the branches
@@ -337,7 +379,9 @@ public:
     tree_->SetBranchAddress("bjet2",&bjet2Ptr);
     tree_->SetBranchAddress("jet1",&jet1Ptr);
     tree_->SetBranchAddress("jet2",&jet2Ptr);
-    
+    tree_->SetBranchAddress("xs_w", &xs_w);
+    tree_->SetBranchAddress("xs_w_kf", &xs_w_kf);
+
     gErrorIgnoreLevel = currentState;
   }
   

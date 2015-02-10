@@ -1,4 +1,4 @@
 #INPUT xsec kfactor
-/mnt/hadoop/store/user/cmorgoth/RunTwo_8TeV_StudySamples/HTMHT_ParkedData/HTMHTParked_ILV_RunB_Total.root 1.0 1.0
-/mnt/hadoop/store/user/cmorgoth/RunTwo_8TeV_StudySamples/HTMHT_ParkedData/HTMHTParked_ILV_RunC_Total.root 1.0 1.0
-/mnt/hadoop/store/user/cmorgoth/RunTwo_8TeV_StudySamples/HTMHT_ParkedData/HTMHTParked_ILV_RunD_Total.root 1.0 1.0
+/wntmp/cmorgoth/HTMHTParked_ILV_RunB_Total_V2.root 1.0 1.0
+/wntmp/cmorgoth/HTMHTParked_ILV_RunC_Total_V2.root 1.0 1.0
+/wntmp/cmorgoth/HTMHTParked_ILV_RunD_Total_V2.root 1.0 1.0

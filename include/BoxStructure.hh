@@ -30,12 +30,13 @@ public:
   //
   TH1F* h_mass_twoleptons;
   
-  //Constructure
+  //Constructor
   BoxStructure();
-  
+
+  BoxStructure( TString box_name );
   BoxStructure( float*, float* );
   BoxStructure( float*, float* , TString box_name );
-  //Destructure
+  //Destructor
   ~BoxStructure();
   //Methods
   
@@ -56,7 +57,11 @@ public:
   void FillOneLepMT( float val, float weight );
   void FillMassTwoLeptons( float val, float weight );
   
+  //Writing Histos to File
+  void WriteMr( TFile* f );
   
+
+  void InitVariables();
   void SetDebugLevel( bool debug );
   void SetInfoLevel( bool info );
 

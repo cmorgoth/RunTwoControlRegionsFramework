@@ -6,6 +6,16 @@
 BoxStructure::BoxStructure()
 {
   if ( _debug ) std::cout << "[DEBUG]: Accessing Constructure" << std::endl;
+  std::cout << "[WARNING]: Undefined Box Name; Use BoxStructure( TString box_name )"
+	    << std::endl;
+  InitVariables();
+};
+
+BoxStructure::BoxStructure( TString box_name )
+{
+  if ( _debug ) std::cout << "[DEBUG]: Accessing Constructure" << std::endl;
+  InitVariables();
+  this->box_name = box_name;
 };
 
 BoxStructure::~BoxStructure()
@@ -14,6 +24,53 @@ BoxStructure::~BoxStructure()
   if ( _debug ) std::cout << "[DEBUG]: Accessing Destructure"<< std::endl;
 };
 
+void BoxStructure::InitVariables()
+{
+  _debug =  false;
+  _info = false;
+  box_name = "";
+
+  //MR                                                                           
+  _Mr_nbins = 0;
+  _Mr_xl = .0;
+  _Mr_xh = .0;
+  _Mr_binning  = NULL;
+
+  //RSQ                                                                                     
+  _Rsq_nbins = 0;
+  _Rsq_xl = 0.0;
+  _Rsq_xh = 0.0;
+  _Rsq_binning = NULL;
+
+  //NJets                                                                           
+  _Njet_nbins = 0;
+  _Njet_xl = .0;
+  _Njet_xh = .0;
+  
+  //HT
+  _HT_nbins = 0;
+  _HT_xl = .0;
+  _HT_xh = .0;
+
+  //MT1Lep                                                                     
+  _MT1Lep_nbins = 0;
+  _MT1Lep_xl = .0;
+  _MT1Lep_xh = .0;
+
+  //MinvTwoLeptons                                                          
+  _MassTwoLeptons_nbins = 0;
+  _MassTwoLeptons_xl = .0;
+  _MassTwoLeptons_xh = .0;
+  
+  //HISTOS
+  h_mr = NULL;
+  h_rsq = NULL;
+  h_njet = NULL;
+  h_ht = NULL;
+  h_mt_1lep = NULL;
+  h_mass_twoleptons = NULL;
+
+};
 void BoxStructure::SetDebugLevel( bool debug )
 {
   _debug = debug;
@@ -41,6 +98,13 @@ void BoxStructure::SetRsqBinning( int nbins, float*  bins = NULL )
 {
   _Rsq_nbins = nbins;
   _Rsq_binning = bins;
+};
+
+void BoxStructure::SetRsqBinning( int nbins, float xl, float xh )
+{
+  _Rsq_nbins = nbins;
+  _Rsq_xl = xl;
+  _Rsq_xh = xh;
 };
 
 void BoxStructure::SetNjetBinning( int nbins, float xl, float xh )
@@ -78,12 +142,14 @@ void BoxStructure::CreateMr()
       if ( _Mr_binning != NULL )
 	{
 	  if ( _debug ) std::cout << "[DEBUG]: Creating Mr histo using variable binning" << std::endl;
-	  h_mr = new TH1F( "h_mr" + box_name, "h_mr" + box_name, _Mr_nbins, _Mr_binning );
+	  h_mr = new TH1F( "h_mr_" + box_name, "h_mr_" + box_name,
+			   _Mr_nbins, _Mr_binning );
 	}
       else
 	{
 	  if ( _debug ) std::cout << "[DEBUG]: Creating Mr histo using fix binning" << std::endl;
-	  h_mr = new TH1F( "h_mr" + box_name, "h_mr" + box_name, _Mr_nbins, _Mr_xl, _Mr_xh );
+	  h_mr = new TH1F( "h_mr_" + box_name, "h_mr_" + box_name,
+			   _Mr_nbins, _Mr_xl, _Mr_xh );
 	}
     }
   else
@@ -99,12 +165,14 @@ void BoxStructure::CreateRsq()
       if ( _Rsq_binning != NULL )
         {
           if ( _debug ) std::cout << "[DEBUG]: Creating Rsq histo using variable binning" << std::endl;
-          h_rsq = new TH1F( "h_rsq" + box_name, "h_rsq" + box_name, _Rsq_nbins, _Rsq_binning );
+          h_rsq = new TH1F( "h_rsq_" + box_name, "h_rsq_" + box_name,
+			    _Rsq_nbins, _Rsq_binning );
         }
       else
         {
           if ( _debug ) std::cout << "[DEBUG]: Creating Rsq histo using fix binning" << std::endl;
-          h_rsq = new TH1F( "h_rsq" + box_name, "h_rsq" + box_name, _Rsq_nbins, _Rsq_xl, _Rsq_xh );
+          h_rsq = new TH1F( "h_rsq_" + box_name, "h_rsq_" + box_name,
+			    _Rsq_nbins, _Rsq_xl, _Rsq_xh );
         }
     }
   else
@@ -118,7 +186,8 @@ void BoxStructure::CreateNjet()
   if ( _Njet_nbins > 0 )
     {
       if ( _debug ) std::cout << "[DEBUG]: Creating Njet histo using fix binning" << std::endl;
-      h_njet = new TH1F( "h_njet" + box_name, "h_njet" + box_name, _Njet_nbins, _Njet_xl, _Njet_xh );
+      h_njet = new TH1F( "h_njet_" + box_name, "h_njet_" + box_name,
+			 _Njet_nbins, _Njet_xl, _Njet_xh );
     }
   else
     {
@@ -131,7 +200,8 @@ void BoxStructure::CreateHT()
   if ( _HT_nbins > 0 )
     {
       if ( _debug ) std::cout << "[DEBUG]: Creating HT histo using fix binning" << std::endl;
-      h_ht = new TH1F( "h_ht" + box_name, "h_ht" + box_name, _HT_nbins, _HT_xl, _HT_xh );
+      h_ht = new TH1F( "h_ht_" + box_name, "h_ht_" + box_name,
+		       _HT_nbins, _HT_xl, _HT_xh );
     }
   else
     {
@@ -144,7 +214,8 @@ void BoxStructure::CreateOneLepMT()
   if ( _MT1Lep_nbins > 0 )
     {
       if ( _debug ) std::cout << "[DEBUG]: Creating MT1Lep histo using fix binning" << std::endl;
-      h_mt_1lep = new TH1F( "h_mt1lep" + box_name, "h_mt1lep" + box_name, _MT1Lep_nbins, _MT1Lep_xl, _MT1Lep_xh );
+      h_mt_1lep = new TH1F( "h_mt1lep_" + box_name, "h_mt1lep_" + box_name,
+			    _MT1Lep_nbins, _MT1Lep_xl, _MT1Lep_xh );
     }
   else
     {
@@ -158,7 +229,8 @@ void BoxStructure::CreateMassTwoLeptons()
     {
       if ( _debug ) std::cout << "[DEBUG]: Creating MassTwoLeptons histo using fix binning" << std::endl;
       h_mass_twoleptons = 
-	new TH1F( "h_mass_twoleptons" + box_name, "h_mass_twoleptons" + box_name, _MassTwoLeptons_nbins,
+	new TH1F( "h_mass_twoleptons_" + box_name,
+		  "h_mass_twoleptons_" + box_name, _MassTwoLeptons_nbins,
 		  _MassTwoLeptons_xl, _MassTwoLeptons_xh );
     }
   else
@@ -244,3 +316,10 @@ void BoxStructure::FillMassTwoLeptons( float val = -999.0, float weight = 1.0 )
       std::cerr << "[ERROR]: MassTwoLeptons Histogram was NOT created" << std::endl;
     }
 };
+
+/*
+void BoxStructure::WriteMr( TFile* f )
+{
+  f->Write( )
+};
+*/

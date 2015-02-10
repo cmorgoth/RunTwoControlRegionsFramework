@@ -18,15 +18,24 @@ LDFLAGS := $(shell root-config --glibs) $(STDLIBDIR)
 CPPFLAGS += -g
 
 TARGET = ControlSamples
+TARGET2 = NormalizeMC
 
-SRC = app/test.cc src/BoxStructure.cc
+SRC = app/test.cc src/BoxStructure.cc src/BkgData.cc include/ControlSampleEvents.hh
+SRC2 = app/Normalize_SMbkgs.cc src/NormalizeMC.cc
 
 OBJ = $(SRC:.cc=.o)
+OBJ2 = $(SRC2:.cc=.o)
 
-all : $(TARGET)
+all : $(TARGET) $(TARGET2)
 
 $(TARGET) : $(OBJ)
 	$(LD) $(CPPFLAGS) -o $(TARGET) $(OBJ) $(LDFLAGS)
+	@echo $@
+	@echo $<
+	@echo $^
+
+$(TARGET2) : $(OBJ2)
+	$(LD) $(CPPFLAGS) -o $(TARGET2) $(OBJ2) $(LDFLAGS)
 	@echo $@
 	@echo $<
 	@echo $^
@@ -36,5 +45,5 @@ $(TARGET) : $(OBJ)
 	@echo $@	
 	@echo $<
 clean :
-	rm -f *.o src/*.o $(TARGET) *~
+	rm -f *.o src/*.o $(TARGET)  $(TARGET2) *~
 
