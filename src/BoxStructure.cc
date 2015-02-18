@@ -317,6 +317,16 @@ void BoxStructure::FillMassTwoLeptons( float val = -999.0, float weight = 1.0 )
     }
 };
 
+
+void BoxStructure::Sumw2()
+{
+  if( h_mr != NULL ) h_mr->Sumw2();
+  if( h_rsq != NULL ) h_rsq->Sumw2();
+  if( h_njet != NULL ) h_njet->Sumw2();
+  if( h_ht != NULL ) h_ht->Sumw2();
+  if( h_mt_1lep != NULL ) h_mt_1lep->Sumw2();
+  if( h_mass_twoleptons != NULL ) h_mass_twoleptons->Sumw2();
+};
 /*
 void BoxStructure::WriteMr( TFile* f )
 {

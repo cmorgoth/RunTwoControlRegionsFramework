@@ -1,0 +1,7 @@
+#INPUT xsec(pb) kfactor
+/mnt/hadoop/store/user/cmorgoth/RunTwo_8TeV_StudySamples/Tbar_s_channel/Tbar_s-channel_TuneZ2star_8TeV-powheg-tauola_testMC_0.root 1.57 1.1210191083
+/mnt/hadoop/store/user/cmorgoth/RunTwo_8TeV_StudySamples/Tbar_t_channel/Tbar_t-channel_TuneZ2star_8TeV-powheg-tauola_testMC_0.root 25.0 1.1896
+/mnt/hadoop/store/user/cmorgoth/RunTwo_8TeV_StudySamples/Tbar_tW_channel/Tbar_tW-channel-DR_TuneZ2star_8TeV-powheg-tauola_testMC_0.root 10.7 1.0373831776
+/mnt/hadoop/store/user/cmorgoth/RunTwo_8TeV_StudySamples/T_s_channel/T_s-channel_TuneZ2star_8TeV-powheg-tauola_testMC_0.root 2.82 1.3439716312
+/mnt/hadoop/store/user/cmorgoth/RunTwo_8TeV_StudySamples/T_t_channel/T_t-channel_TuneZ2star_8TeV-powheg-tauola_testMC_0.root 47.0 1.1674468085
+/mnt/hadoop/store/user/cmorgoth/RunTwo_8TeV_StudySamples/T_tW_channel/T_tW-channel_TuneZ2star_8TeV-powheg-tauola_testMC_0.root 10.7 1.0373831776

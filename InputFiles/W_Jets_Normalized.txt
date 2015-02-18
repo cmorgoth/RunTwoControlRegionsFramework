@@ -1,5 +1,5 @@
-/wntmp/cmorgoth/WJetsToLNu_150_HT_200_RunTwo_TOTAL_Normalized.root
-/wntmp/cmorgoth/WJetsToLNu_200_HT_250_RunTwo_TOTAL_Normalized.root
-/wntmp/cmorgoth/WJetsToLNu_250_HT_300_RunTwo_TOTAL_Normalized.root
-/wntmp/cmorgoth/WJetsToLNu_300_HT_400_RunTwo_TOTAL_Normalized.root
-/wntmp/cmorgoth/WJetsToLNu_400_HT_Inf_RunTwo_TOTAL_Normalized.root
+/mnt/hadoop/store/user/cmorgoth/RunTwo8TeV_HaddSamples/MC/WJetsToLNu_150_HT_200_RunTwo_TOTAL_Normalized.root
+/mnt/hadoop/store/user/cmorgoth/RunTwo8TeV_HaddSamples/MC/WJetsToLNu_200_HT_250_RunTwo_TOTAL_Normalized.root
+/mnt/hadoop/store/user/cmorgoth/RunTwo8TeV_HaddSamples/MC/WJetsToLNu_250_HT_300_RunTwo_TOTAL_Normalized.root
+/mnt/hadoop/store/user/cmorgoth/RunTwo8TeV_HaddSamples/MC/WJetsToLNu_300_HT_400_RunTwo_TOTAL_Normalized.root
+/mnt/hadoop/store/user/cmorgoth/RunTwo8TeV_HaddSamples/MC/WJetsToLNu_400_HT_Inf_RunTwo_TOTAL_Normalized.root

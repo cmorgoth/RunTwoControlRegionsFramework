@@ -1,3 +1,3 @@
-/wntmp/cmorgoth/HTMHTParked_ILV_RunB_Total_V2_Normalized.root
-/wntmp/cmorgoth/HTMHTParked_ILV_RunC_Total_V2_Normalized.root
-/wntmp/cmorgoth/HTMHTParked_ILV_RunD_Total_V2_Normalized.root
+/mnt/hadoop/store/user/cmorgoth/RunTwo8TeV_HaddSamples/Data/HTMHTParked_ILV_RunB_Total_V2_Normalized.root
+/mnt/hadoop/store/user/cmorgoth/RunTwo8TeV_HaddSamples/Data/HTMHTParked_ILV_RunC_Total_V2_Normalized.root
+/mnt/hadoop/store/user/cmorgoth/RunTwo8TeV_HaddSamples/Data/HTMHTParked_ILV_RunD_Total_V2_Normalized.root

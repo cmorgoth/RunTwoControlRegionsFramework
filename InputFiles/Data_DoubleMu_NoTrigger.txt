@@ -1,0 +1,4 @@
+/wntmp/cmorgoth/DoubleMuParkedRun2012A_RunTwo8TeV_NoTrigger.root
+/wntmp/cmorgoth/DoubleMuParkedRun2012B_RunTwo8TeV_NoTrigger.root
+/wntmp/cmorgoth/DoubleMuParkedRun2012C_RunTwo8TeV_NoTrigger.root
+/wntmp/cmorgoth/DoubleMuParkedRun2012D_RunTwo8TeV_NoTrigger.root

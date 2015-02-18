@@ -1,2 +1,2 @@
-/wntmp/cmorgoth/DYJetsHT200To400_RunTwo_TOTAL_Normalized.root
-/wntmp/cmorgoth/DYJetsHT400_RunTwo_hadd_TOTAL_Normalized.root
+/mnt/hadoop/store/user/cmorgoth/RunTwo8TeV_HaddSamples/MC/DYJetsHT200To400_RunTwo_TOTAL_Normalized.root
+/mnt/hadoop/store/user/cmorgoth/RunTwo8TeV_HaddSamples/MC/DYJetsHT400_RunTwo_hadd_TOTAL_Normalized.root

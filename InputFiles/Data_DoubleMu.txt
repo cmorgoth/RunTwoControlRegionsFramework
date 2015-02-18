@@ -1,0 +1,4 @@
+/mnt/hadoop/store/user/cmorgoth/RunTwo8TeV_HaddSamples/Data/DoubleMuParkedRun2012A_RunTwo8TeV.root
+/mnt/hadoop/store/user/cmorgoth/RunTwo8TeV_HaddSamples/Data/DoubleMuParkedRun2012B_RunTwo8TeV.root
+/mnt/hadoop/store/user/cmorgoth/RunTwo8TeV_HaddSamples/Data/DoubleMuParkedRun2012C_RunTwo8TeV.root
+/mnt/hadoop/store/user/cmorgoth/RunTwo8TeV_HaddSamples/Data/DoubleMuParkedRun2012D_RunTwo8TeV.root

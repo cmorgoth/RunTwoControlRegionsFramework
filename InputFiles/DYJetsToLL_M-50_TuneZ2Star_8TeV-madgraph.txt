@@ -1,0 +1,2 @@
+#INPUT xsec(pb) kfactor
+/wntmp/cmorgoth/DYJetsToLL_M-50_TuneZ2Star_8TeV-madgraph-tarball_RunTwo8TeV.root 2950.0 1.1972542373

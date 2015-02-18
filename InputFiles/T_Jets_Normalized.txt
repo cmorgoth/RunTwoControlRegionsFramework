@@ -1,0 +1,6 @@
+/mnt/hadoop/store/user/cmorgoth/RunTwo8TeV_HaddSamples/MC/T_s-channel_TuneZ2star_8TeV-powheg-tauola_testMC_0_Normalized.root
+/mnt/hadoop/store/user/cmorgoth/RunTwo8TeV_HaddSamples/MC/T_t-channel_TuneZ2star_8TeV-powheg-tauola_testMC_0_Normalized.root
+/mnt/hadoop/store/user/cmorgoth/RunTwo8TeV_HaddSamples/MC/T_tW-channel_TuneZ2star_8TeV-powheg-tauola_testMC_0_Normalized.root
+/mnt/hadoop/store/user/cmorgoth/RunTwo8TeV_HaddSamples/MC/Tbar_s-channel_TuneZ2star_8TeV-powheg-tauola_testMC_0_Normalized.root
+/mnt/hadoop/store/user/cmorgoth/RunTwo8TeV_HaddSamples/MC/Tbar_t-channel_TuneZ2star_8TeV-powheg-tauola_testMC_0_Normalized.root
+/mnt/hadoop/store/user/cmorgoth/RunTwo8TeV_HaddSamples/MC/Tbar_tW-channel-DR_TuneZ2star_8TeV-powheg-tauola_testMC_0_Normalized.root

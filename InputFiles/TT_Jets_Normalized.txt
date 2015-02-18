@@ -1,3 +1,3 @@
-/wntmp/cmorgoth/RazorControlSampleTTJetsFullLept_Normalized.root
-/wntmp/cmorgoth/RazorControlSampleTTJetsHadronic_Normalized.root
-/wntmp/cmorgoth/RazorControlSampleTTJetsSemiLept_Normalized.root
+/mnt/hadoop/store/user/cmorgoth/RunTwo8TeV_HaddSamples/MC/RazorControlSampleTTJetsFullLept_Normalized.root
+/mnt/hadoop/store/user/cmorgoth/RunTwo8TeV_HaddSamples/MC/RazorControlSampleTTJetsHadronic_Normalized.root
+/mnt/hadoop/store/user/cmorgoth/RunTwo8TeV_HaddSamples/MC/RazorControlSampleTTJetsSemiLept_Normalized.root
