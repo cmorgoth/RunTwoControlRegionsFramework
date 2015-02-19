@@ -7,11 +7,30 @@
 
 BkgData::BkgData(){
   _isData = false;
+  pileup = NULL;
+  puFname = "";
+  //SetPuHisto();
 };
 
 BkgData::BkgData( bool isData ){
   _isData = isData;
 };
+
+bool BkgData::SetPuHisto()
+{
+  if ( puFname != "" )
+    {
+      TFile f( puFname );
+      pileup = (TH1F*)f.Get("pileup");
+      f.Close();
+    }
+};
+
+double BkgData::GetPileUpW( float pu )
+{
+  if( pileup != NULL )return pileup->GetBinContent( pileup->FindBin( pu ) );
+  return 1.0;
+}
 
 bool BkgData::Loop()
 {
@@ -29,15 +48,15 @@ bool BkgData::Loop()
       }
     else
       {
-	//w = CSE->xs_w_kf;//NNLO
-	w = CSE->xs_w;//LO
+	w = GetPileUpW( CSE->NPU_0 )*CSE->xs_w_kf;//NNLO
+	//w = GetPileUpW( CSE->NPU_0 )*CSE->xs_w;//LO
       }
     //std::cout << "MET: " << CSE->MET << std::endl;
     //Baseline Selection
     //if ( CSE->NJets80 < 2 ) continue;
     //if ( CSE->MR < 200.0  || CSE->Rsq < 0.1 ) continue;
     //if ( CSE->HT < 200 ) continue; 
-    //if ( CSE->MET < 40.0 ) continue;
+    if ( CSE->MET < 40.0 ) continue;
 
     //MuMu
     if( abs( CSE->lep1Type ) == 13 && abs( CSE->lep2Type ) == 13
@@ -72,8 +91,9 @@ bool BkgData::Loop()
 	&& CSE->NBJetsMedium > 1 )
       {
 	mass  = (CSE->lep1 + CSE->lep2).M();
-	//std::cout << CSE->lep1.Pt() << std::endl;
-	if ( mass > 20.0 )
+	if ( mass > 60.0  
+	     && ( CSE->lep1.Pt() > 22.0 && CSE->lep2.Pt() > 22.0 )
+	     )
 	  {
 	    //std::cout << "mass: " << mass << std::endl;
 	    MuEle->FillMr( CSE->MR, w );

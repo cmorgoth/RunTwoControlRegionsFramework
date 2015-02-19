@@ -32,7 +32,8 @@ public:
   BoxStructure* Ele;
   
   //Constructor
-  BkgData(){};
+  BkgData();
+  BkgData( bool isData );
   
   //BkgData( float*, float* );
   //BkgData( float*, float* , TString box_name );
@@ -40,11 +41,18 @@ public:
   ~BkgData();
   //Methods
   bool Loop();
+  bool SetPuHisto();
+  double GetPileUpW( float pu );
   
+  //pileup filename
+  TString puFname;
   
 private:
   bool _debug;
   bool _info;
+  bool _isData;
+  
+  TH1F* pileup;
     
 };
 

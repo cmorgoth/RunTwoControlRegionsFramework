@@ -11,13 +11,32 @@
 bool _info = false;
 bool _debug = true;
 TString SaveDir = "/wntmp/cmorgoth/";
-//float Lumi = 18.84;//fb-1
+float Lumi = 18.84;//fb-1
 
-int main(){
+int main( int argc, char* argv[] ){
   
   //std::ifstream mcFile ("InputFiles/NormalizeInput.txt");
   //std::ifstream mcFile ("InputFiles/NormalizeInputTTJets.txt");
-  std::ifstream mcFile ("InputFiles/NormalizeInputData.txt");
+  //std::ifstream mcFile ("InputFiles/NormalizeInputData.txt");
+  //std::ifstream mcFile ("InputFiles/SingleTop.txt");
+  std::ifstream mcFile;
+  if ( argc == 1 || argc > 3 )
+    {
+      std::cerr << "[ERROR]: Not Enough Arguments " << std::endl;
+      std::cout << 
+	"[INFO]: Usage:\n./NormalizeMC InputFile OutputDir\n" 
+		<< "./NormalizeMC OutputDir" << std::endl;
+      return 0;
+    }
+  else if ( argc == 2 )
+    {
+      mcFile.open("InputFiles/DYJetsToLL_M-50_TuneZ2Star_8TeV-madgraph.txt");
+    }
+  else if ( argc = 3 )
+    {
+      mcFile.open( argv[1] );
+      SaveDir = argv[2];
+    }
   std::string fname;
   TString OutName;
   TString InName;
@@ -41,16 +60,14 @@ int main(){
 	    }
 	  
 	  TFile* f = new TFile( InName );
-	  
-	  //TTree* eff = (TTree*)f->Get("effTree");
-	  //float ngen = GetNgen( eff );
-	  //std::cout << "NGEN: " << ngen << std::endl;
+	  TTree* eff = (TTree*)f->Get("effTree");
+	  float ngen = GetNgen( eff );
+	  std::cout << "NGEN: " << ngen << std::endl;
 	  TTree* tree = (TTree*)f->Get("ControlSampleEvent");
 	  
 	  //xsec in lumi have to have the same units
 	  xsec = xsec*1000.0;//Scaling to fb
-	  //NormalizeTree( tree, xsec, Lumi, kfactor, ngen, OutName );
-	  NormalizeTree( tree, 1.0, 1.0, 1.0, 1.0, OutName );//Data
+	  NormalizeTree( tree, xsec, Lumi, kfactor, ngen, OutName );
 	}//while loop
     }
   else

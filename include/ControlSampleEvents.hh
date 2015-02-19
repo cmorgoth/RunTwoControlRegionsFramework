@@ -237,6 +237,7 @@ public:
     }
     
     InitTree();
+    //InitTreeSmall();
     assert(tree_);
   }
   
@@ -308,6 +309,54 @@ public:
     tree_->Branch("jet1",    "TLorentzVector", &jet1Ptr);
     tree_->Branch("jet2",    "TLorentzVector", &jet2Ptr);
   } 
+  
+  void InitTreeSmall()
+  {
+    assert(tree_);
+    // don't forget to set pointers to zero before you set address
+    // or you will fully appreciate that "ROOT sucks" :)             
+    InitVariables();
+    //Set branch address                                               
+    Int_t currentState = gErrorIgnoreLevel;
+    
+    tree_->SetBranchStatus("*", 0);
+    tree_->SetBranchStatus("lep1Type", 1);
+    tree_->SetBranchStatus("lep1PassLoose", 1);
+    tree_->SetBranchStatus("lep2Type", 1);
+    tree_->SetBranchStatus("lep2PassLoose", 1);
+    tree_->SetBranchStatus("NBJetsLoose", 1);
+    tree_->SetBranchStatus("NBJetsMedium", 1);
+    tree_->SetBranchStatus("MR", 1);
+    tree_->SetBranchStatus("Rsq", 1);
+    tree_->SetBranchStatus("lep1MT", 1);
+    tree_->SetBranchStatus("HT", 1);
+    tree_->SetBranchStatus("MET", 1);
+    tree_->SetBranchStatus("xs_w", 1);
+    tree_->SetBranchStatus("xs_w_kf", 1);
+    tree_->SetBranchStatus("lep1", 1);
+    tree_->SetBranchStatus("lep2", 1);
+    //tree_->SetBranchStatus("", 1);
+    //tree_->SetBranchStatus("", 1);
+
+    tree_->SetBranchAddress("lep1Type",&lep1Type);
+    tree_->SetBranchAddress("lep2Type",&lep2Type);
+    tree_->SetBranchAddress("lep1PassLoose",&lep1PassLoose);
+    tree_->SetBranchAddress("lep2PassLoose",&lep2PassLoose);
+    tree_->SetBranchAddress("MR",&MR);
+    tree_->SetBranchAddress("Rsq",&Rsq);
+    tree_->SetBranchAddress("NBJetsLoose",&NBJetsLoose);
+    tree_->SetBranchAddress("NBJetsMedium",&NBJetsMedium);
+    tree_->SetBranchAddress("HT",&HT);
+    tree_->SetBranchAddress("MET",&MET);
+    tree_->SetBranchAddress("lep1MT",&lep1MT);
+    tree_->SetBranchAddress("lep1",&lep1Ptr);
+    tree_->SetBranchAddress("lep2",&lep2Ptr);
+    tree_->SetBranchAddress("xs_w", &xs_w);
+    tree_->SetBranchAddress("xs_w_kf", &xs_w_kf);
+
+    gErrorIgnoreLevel = currentState;
+    
+  }
   
   // initialze a ControlSampleEvents
   void InitTree(){
@@ -381,7 +430,7 @@ public:
     tree_->SetBranchAddress("jet2",&jet2Ptr);
     tree_->SetBranchAddress("xs_w", &xs_w);
     tree_->SetBranchAddress("xs_w_kf", &xs_w_kf);
-
+    
     gErrorIgnoreLevel = currentState;
   }
   

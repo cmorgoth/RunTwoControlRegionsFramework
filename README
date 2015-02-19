@@ -7,3 +7,13 @@ control regions as well as defining the scale factors (SF)
 obtained from the different control regions.
 
 ... 
+MC NORMALIZATION
+
+To Normalize the MC to Data use the NormalizeMC executable obtained after doing make on the head of the directory.
+
+As now the luminosity is hard coded to be 18.84 fb-1 in the app/Normalize_SMbkgs.cc file.
+
+To nomalize MC use an input file with format as in: InputFiles/AllFilesToNormalize.txt
+
+To use the program just do:
+./NormalizeMC InputFile OutputDir

@@ -24,11 +24,15 @@ int main()
   //TFile* f = new TFile("DoubleMuPD_LO_HT200.root");
   //TFile* f = new TFile("DoubleMu_LO_NoJetCut.root"); 
   //TFile* f = new TFile("DoubleMu_LO_NoJetCut_HTcut.root");
+  //TFile* f = new TFile("DoubleMu_NoTrigger.root");
+  //TFile* f = new TFile("DoubleMu_NoTrigger_PT_Cut.root");
   //TFile* f = new TFile("MuEG_LO_NoJetCut.root");
   //TFile* f = new TFile("MuEG_LO_NoJetCut_HT_Cut.root");
   //TFile* f = new TFile("DoubleMu_LO_AllCuts.root");
   //TFile* f = new TFile("MuEG_LO_AllCuts.root");
-  TFile* f = new TFile("MuEG_NoTrigger_LO_AllCuts_2B_MET.root");
+  //TFile* f = new TFile("MuEG_NoTrigger_LO_AllCuts_2B_MET.root");
+  //TFile* f = new TFile("MuEG_NoTrigger_PT_Cut.root");
+  TFile* f = new TFile("MuEG_NoTrigger_PT_Cut_PuW.root");
   
   TH1F* w;
   TH1F* dy;
@@ -44,8 +48,8 @@ int main()
     for( int j = 0; j < 5; j++ ){
       //outfile name
       //aux = "Plots/Razor_LO_AllCuts_2B_MET_"+hname[j]+"_"+box[i];
-      aux = "Plots/MuEG_NoTrigger_LO_AllCuts_"+hname[j]+"_"+box[i];
-      //aux = "Plots/DoubleMu_LO_AllCuts_"+hname[j]+"_"+box[i];
+      aux = "Plots/MuEG_NoTrigger_LO_PT_Cuts_PUw_"+hname[j]+"_"+box[i];
+      //aux = "Plots/DoubleMu_NoTrigger_PT_Cuts_"+hname[j]+"_"+box[i];
       outName = aux.c_str();
       
       //getting histos

@@ -19,14 +19,17 @@ CPPFLAGS += -g
 
 TARGET = ControlSamples
 TARGET2 = NormalizeMC
+TARGET3 = Plotting
 
-SRC = app/test.cc src/BoxStructure.cc src/BkgData.cc include/ControlSampleEvents.hh
+SRC = app/test.cc src/BoxStructure.cc src/BkgData.cc include/ControlSampleEvents.hh src/PlotCosmetics.cc
 SRC2 = app/Normalize_SMbkgs.cc src/NormalizeMC.cc
+SRC3 = app/plotting.cc src/PlotCosmetics.cc
 
 OBJ = $(SRC:.cc=.o)
 OBJ2 = $(SRC2:.cc=.o)
+OBJ3 = $(SRC3:.cc=.o)
 
-all : $(TARGET) $(TARGET2)
+all : $(TARGET) $(TARGET2) $(TARGET3)
 
 $(TARGET) : $(OBJ)
 	$(LD) $(CPPFLAGS) -o $(TARGET) $(OBJ) $(LDFLAGS)
@@ -40,10 +43,16 @@ $(TARGET2) : $(OBJ2)
 	@echo $<
 	@echo $^
 
+$(TARGET3) : $(OBJ3)
+	$(LD) $(CPPFLAGS) -o $(TARGET3) $(OBJ3) $(LDFLAGS)
+	@echo $@
+	@echo $<
+	@echo $^
+
 %.o : %.cc	
 	$(CXX) $(CPPFLAGS) -o $@ -c $<
 	@echo $@	
 	@echo $<
 clean :
-	rm -f *.o src/*.o $(TARGET)  $(TARGET2) *~
+	rm -f *.o src/*.o $(TARGET)  $(TARGET2) $(TARGET3) *~
 

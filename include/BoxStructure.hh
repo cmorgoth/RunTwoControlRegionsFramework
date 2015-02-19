@@ -60,7 +60,6 @@ public:
   //Writing Histos to File
   void WriteMr( TFile* f );
   
-
   void InitVariables();
   void SetDebugLevel( bool debug );
   void SetInfoLevel( bool info );
@@ -74,6 +73,8 @@ public:
   void SetHTBinning( int nbins, float xl, float xh );
   void SetMT1LepBinning( int nbins, float xl, float xh );
   void SetMassTwoLeptonsBinning( int nbins, float xl, float xh );
+  
+  void Sumw2();
   
 private:
   bool _debug;
